@@ -3,24 +3,652 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mudhen Release Manager | C-Day Fall 2026 Showcase</title>
-  <meta name="description" content="Kennesaw State University CCSE Capstone Showcase: Mudhen Release Manager - Game Studio Release Orchestration Platform by Tanner Giddens.">
-  <meta property="og:title" content="Mudhen Release Manager · C-Day Fall 2026">
-  <meta property="og:description" content="Senior Capstone Showcase project by Tanner Giddens in partnership with Mudhen Games.">
-  <meta property="og:type" content="website">
-  <link rel="stylesheet" href="styles.css">
+  <title>Mudhen Release Manager | KSU CCSE C-Day Showcase 2026</title>
+  <meta name="description" content="Kennesaw State University CCSE Capstone Showcase: Mudhen Release Manager - Game Studio Release Orchestration Platform by Tanner Giddens and Team.">
   <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       MUDHEN RELEASE MANAGER - C-DAY SHOWCASE
+       Engineered for Kennesaw State University CCSE Computing Showcase
+       ============================================================ */
+    :root {
+      --bg-dark: #0a1413;
+      --bg-surface: #0f1f1d;
+      --bg-card: #142927;
+      --bg-card-hover: #193330;
+      --border: rgba(45, 212, 191, 0.15);
+      --border-bright: rgba(45, 212, 191, 0.4);
+      --primary: #087f73;
+      --accent: #2dd4bf;
+      --accent-glow: rgba(45, 212, 191, 0.25);
+      --text-main: #f0fdfa;
+      --text-muted: #99f6e4;
+      --text-sub: #5eead4;
+      --text-dim: #94a3b8;
+      --linkedin: #0a66c2;
+      --linkedin-hover: #084e96;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      background: radial-gradient(circle at 50% 0%, rgba(8, 127, 115, 0.25) 0%, transparent 60%),
+                  radial-gradient(circle at 100% 50%, rgba(15, 31, 29, 0.8) 0%, transparent 50%),
+                  var(--bg-dark);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── HEADER / NAV ── */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 20, 19, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      height: 70px;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      object-fit: cover;
+      box-shadow: 0 0 15px var(--accent-glow);
+    }
+
+    .brand-title {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .brand-sub {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-dim);
+      transition: color 0.15s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--accent);
+    }
+
+    .btn-linkedin-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: var(--linkedin);
+      color: #ffffff;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(10, 102, 194, 0.35);
+    }
+
+    .btn-linkedin-nav:hover {
+      background: var(--linkedin-hover);
+      transform: translateY(-1px);
+    }
+
+    /* ── HERO SECTION ── */
+    .hero {
+      padding: 80px 0 60px;
+      position: relative;
+    }
+
+    .cday-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 16px;
+      background: rgba(45, 212, 191, 0.08);
+      border: 1px solid var(--border-bright);
+      border-radius: 9999px;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+      box-shadow: 0 0 20px rgba(45, 212, 191, 0.15);
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    .hero-title {
+      font-size: clamp(38px, 6vw, 62px);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, #ffffff 30%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: clamp(17px, 2.5vw, 20px);
+      color: #94a3b8;
+      max-width: 820px;
+      line-height: 1.6;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+
+    .btn-hero-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      background: var(--linkedin);
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      box-shadow: 0 6px 20px rgba(10, 102, 194, 0.4);
+    }
+
+    .btn-hero-primary:hover {
+      background: var(--linkedin-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(10, 102, 194, 0.5);
+    }
+
+    .btn-hero-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-hero-secondary:hover {
+      border-color: var(--accent);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      padding: 24px;
+      background: rgba(15, 31, 29, 0.7);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-val {
+      font-family: var(--font-mono);
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .stat-text {
+      font-size: 12px;
+      color: var(--text-dim);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── SECTION COMMON ── */
+    .section {
+      padding: 90px 0;
+      position: relative;
+    }
+
+    .section-darker {
+      background: rgba(10, 20, 19, 0.5);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 56px;
+    }
+
+    .tag-label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .section-heading {
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+
+    .section-sub {
+      font-size: 16px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    /* ── CAPSTONE TEAM SECTION ── */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .team-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 24px 26px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .team-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-bright);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .team-card.featured {
+      border-color: var(--accent);
+      background: linear-gradient(180deg, #173330 0%, #102422 100%);
+      box-shadow: 0 0 25px rgba(45, 212, 191, 0.15);
+    }
+
+    .lead-badge {
+      position: absolute;
+      top: -12px;
+      background: linear-gradient(135deg, var(--accent) 0%, #087f73 100%);
+      color: #042f2e;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 9999px;
+      box-shadow: 0 4px 12px rgba(45, 212, 191, 0.4);
+    }
+
+    .avatar-box {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 3px solid var(--border-bright);
+      padding: 3px;
+      background: var(--bg-surface);
+      margin-bottom: 18px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+    }
+
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .avatar-initials {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #087f73 0%, #173f3c 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-weight: 800;
+      font-size: 26px;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .member-name {
+      font-size: 20px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .member-role {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+
+    .member-desc {
+      font-size: 13.5px;
+      color: var(--text-dim);
+      line-height: 1.5;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .btn-member-linkedin {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      background: var(--linkedin);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(10, 102, 194, 0.3);
+    }
+
+    .btn-member-linkedin:hover {
+      background: var(--linkedin-hover);
+      transform: translateY(-1px);
+    }
+
+    .stakeholder-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      padding: 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .stakeholder-item .label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+
+    .stakeholder-item .val {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    /* ── FEATURES GRID ── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: all 0.25s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-bright);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .feat-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(45, 212, 191, 0.1);
+      border: 1px solid var(--border-bright);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .feat-title {
+      font-size: 19px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .feat-desc {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    /* ── TECH STACK ── */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .tech-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .tech-title {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tech-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .tech-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: #ffffff;
+    }
+
+    .pill {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      background: rgba(45, 212, 191, 0.08);
+      border: 1px solid var(--border-bright);
+      border-radius: 6px;
+      color: var(--accent);
+      min-width: 90px;
+      text-align: center;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #060d0c;
+      border-top: 1px solid var(--border);
+      padding: 48px 0;
+      margin-top: auto;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer-brand {
+      color: #ffffff;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hero {
+        padding: 50px 0 40px;
+      }
+      .section {
+        padding: 60px 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Top Navigation -->
   <nav class="navbar" aria-label="Main Navigation">
-    <div class="container nav-container">
-      <div class="nav-brand">
-        <img src="assets/logo.png" alt="Mudhen Games Logo" class="nav-logo">
-        <div class="brand-text">
-          <h1>Mudhen Games</h1>
-          <span>Release Manager · C-Day 2026</span>
+    <div class="container nav-inner">
+      <div class="brand">
+        <img src="assets/logo.png" alt="Mudhen Games" class="brand-logo">
+        <div>
+          <div class="brand-title">Mudhen Games</div>
+          <div class="brand-sub">Release Manager · C-Day 2026</div>
         </div>
       </div>
       <ul class="nav-links">
@@ -29,8 +657,8 @@
         <li><a href="#features" class="nav-link">Features</a></li>
         <li><a href="#architecture" class="nav-link">Tech Stack</a></li>
       </ul>
-      <a href="https://www.linkedin.com/in/tanner-giddens-1ab155346/" target="_blank" rel="noopener noreferrer" class="nav-cta" aria-label="Connect on LinkedIn">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+      <a href="https://www.linkedin.com/in/tanner-giddens-1ab155346/" target="_blank" rel="noopener noreferrer" class="btn-linkedin-nav">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
           <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
         </svg>
         <span>Connect on LinkedIn</span>
@@ -41,142 +669,143 @@
   <!-- Hero Section -->
   <header class="hero">
     <div class="container">
-      <div class="hero-badge">
+      <div class="cday-badge">
         <span class="badge-dot"></span>
         KSU CCSE Computing Showcase · Fall 2026
       </div>
-      <h2 class="hero-title">
-        Mudhen <span class="highlight">Release Manager</span>
-      </h2>
-      <p class="hero-lead">
+      <h1 class="hero-title">
+        Mudhen <span class="gradient-text">Release Manager</span>
+      </h1>
+      <p class="hero-desc">
         A centralized, real-time release orchestration and milestone synchronization platform developed for independent game development studios. Unifies Steam partner analytics, Discord patch broadcasts, Trello task synchronization, and collaborative Kanban workflows into a single production command center.
       </p>
+
       <div class="hero-actions">
-        <a href="https://www.linkedin.com/in/tanner-giddens-1ab155346/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <a href="https://www.linkedin.com/in/tanner-giddens-1ab155346/" target="_blank" rel="noopener noreferrer" class="btn-hero-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
           </svg>
           Connect with Tanner on LinkedIn
         </a>
-        <a href="#team" class="btn btn-secondary">
+        <a href="#team" class="btn-hero-secondary">
           Meet the Capstone Team
         </a>
       </div>
 
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">230+</div>
-          <div class="stat-label">Automated Integration Tests</div>
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-val">230+</div>
+          <div class="stat-text">Automated Tests Passed</div>
         </div>
-        <div class="stat-card">
-          <div class="stat-number">&lt; 50ms</div>
-          <div class="stat-label">Real-Time SignalR Broadcasts</div>
+        <div class="stat-item">
+          <div class="stat-val">&lt; 50ms</div>
+          <div class="stat-text">SignalR Live Synchronization</div>
         </div>
-        <div class="stat-card">
-          <div class="stat-number">4 Hubs</div>
-          <div class="stat-label">Steam, Discord, Trello, Auth</div>
+        <div class="stat-item">
+          <div class="stat-val">4 Hubs</div>
+          <div class="stat-text">Steam, Discord, Trello, Auth0</div>
         </div>
-        <div class="stat-card">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Sponsor Satisfaction (M3 Demo)</div>
+        <div class="stat-item">
+          <div class="stat-val">100%</div>
+          <div class="stat-text">Sponsor Milestone 3 Approval</div>
         </div>
       </div>
     </div>
   </header>
 
   <!-- Capstone Team Section -->
-  <section id="team" class="section section-alt">
+  <section id="team" class="section section-darker">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">KSU CCSE Capstone</span>
-        <h3 class="section-title">Meet the Capstone Team</h3>
-        <p class="section-desc">Developed by Senior Software Engineering students at Kennesaw State University in partnership with Mudhen Games.</p>
+      <div class="section-head">
+        <span class="tag-label">KSU CCSE Capstone</span>
+        <h2 class="section-heading">Meet the Capstone Team</h2>
+        <p class="section-sub">Senior Software Engineering team at Kennesaw State University working in close partnership with Mudhen Games.</p>
       </div>
 
       <div class="team-grid">
-        <!-- Tanner Giddens (Team Lead & Featured) -->
+        <!-- Tanner Giddens (Featured Lead) -->
         <div class="team-card featured">
-          <span class="team-badge-lead">Team Lead · Architect</span>
-          <div class="team-avatar-wrap">
-            <img src="assets/tanner.jpg" onerror="this.onerror=null; this.src='assets/tanner-placeholder.svg';" alt="Tanner Giddens" class="team-avatar-img">
+          <span class="lead-badge">Team Lead · Architect</span>
+          <div class="avatar-box">
+            <img src="assets/tanner.jpg" onerror="this.onerror=null; this.src='assets/tanner-placeholder.svg';" alt="Tanner Giddens" class="avatar-img">
           </div>
-          <h4 class="team-name">Tanner Giddens</h4>
-          <span class="team-role">Lead Full-Stack Developer</span>
-          <p class="team-major">B.S. Software Engineering · Full-Stack System Architecture, .NET & React</p>
-          <div class="team-actions">
-            <a href="https://www.linkedin.com/in/tanner-giddens-1ab155346/" target="_blank" rel="noopener noreferrer" class="btn-linkedin-team">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-              LinkedIn Profile
-            </a>
-          </div>
+          <h3 class="member-name">Tanner Giddens</h3>
+          <div class="member-role">Lead Full-Stack Developer</div>
+          <p class="member-desc">
+            Senior Software Engineering (BSSWE) student at KSU. Specializing in .NET 10 Web API, React 19 architecture, real-time WebSocket synchronization, and automated release tooling.
+          </p>
+          <a href="https://www.linkedin.com/in/tanner-giddens-1ab155346/" target="_blank" rel="noopener noreferrer" class="btn-member-linkedin">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+            LinkedIn Profile
+          </a>
         </div>
 
         <!-- Karden Lewis -->
         <div class="team-card">
-          <div class="team-avatar-wrap">
-            <div class="team-avatar-initials">KL</div>
+          <div class="avatar-box">
+            <div class="avatar-initials">KL</div>
           </div>
-          <h4 class="team-name">Karden Lewis</h4>
-          <span class="team-role">Software Engineer</span>
-          <p class="team-major">B.S. Software Engineering · Capstone Developer</p>
+          <h3 class="member-name">Karden Lewis</h3>
+          <div class="member-role">Software Engineer</div>
+          <p class="member-desc">B.S. Software Engineering student. Contributing to feature development, component testing, and platform documentation.</p>
         </div>
 
         <!-- Indrit Memo -->
         <div class="team-card">
-          <div class="team-avatar-wrap">
-            <div class="team-avatar-initials">IM</div>
+          <div class="avatar-box">
+            <div class="avatar-initials">IM</div>
           </div>
-          <h4 class="team-name">Indrit Memo</h4>
-          <span class="team-role">Software Engineer</span>
-          <p class="team-major">B.S. Software Engineering · Capstone Developer</p>
+          <h3 class="member-name">Indrit Memo</h3>
+          <div class="member-role">Software Engineer</div>
+          <p class="member-desc">B.S. Software Engineering student. Focused on backend services, database persistence, and integration testing.</p>
         </div>
 
         <!-- Sara Racel -->
         <div class="team-card">
-          <div class="team-avatar-wrap">
-            <div class="team-avatar-initials">SR</div>
+          <div class="avatar-box">
+            <div class="avatar-initials">SR</div>
           </div>
-          <h4 class="team-name">Sara Racel</h4>
-          <span class="team-role">Software Engineer</span>
-          <p class="team-major">B.S. Software Engineering · Capstone Developer</p>
+          <h3 class="member-name">Sara Racel</h3>
+          <div class="member-role">Software Engineer</div>
+          <p class="member-desc">B.S. Software Engineering student. Focused on frontend UI verification, release management flows, and QA testing.</p>
         </div>
 
         <!-- Justin Nchako -->
         <div class="team-card">
-          <div class="team-avatar-wrap">
-            <div class="team-avatar-initials">JN</div>
+          <div class="avatar-box">
+            <div class="avatar-initials">JN</div>
           </div>
-          <h4 class="team-name">Justin Nchako</h4>
-          <span class="team-role">Software Engineer</span>
-          <p class="team-major">B.S. Software Engineering · Capstone Developer</p>
+          <h3 class="member-name">Justin Nchako</h3>
+          <div class="member-role">Software Engineer</div>
+          <p class="member-desc">B.S. Software Engineering student. Working on software requirement analysis and capstone deliverables.</p>
         </div>
 
         <!-- Gavin Johnson -->
         <div class="team-card">
-          <div class="team-avatar-wrap">
-            <div class="team-avatar-initials">GJ</div>
+          <div class="avatar-box">
+            <div class="avatar-initials">GJ</div>
           </div>
-          <h4 class="team-name">Gavin Johnson</h4>
-          <span class="team-role">Software Engineer</span>
-          <p class="team-major">B.S. Software Engineering · Capstone Developer</p>
+          <h3 class="member-name">Gavin Johnson</h3>
+          <div class="member-role">Software Engineer</div>
+          <p class="member-desc">B.S. Software Engineering student. Assisting in milestone validation and project coordination.</p>
         </div>
       </div>
 
-      <!-- Advisors & Sponsor bar -->
-      <div class="advisor-sponsor-bar">
-        <div>
-          <div class="advisor-item-title">Industry Sponsor</div>
-          <div class="advisor-item-value">Mudhen Games</div>
+      <!-- Stakeholder Callout -->
+      <div class="stakeholder-bar">
+        <div class="stakeholder-item">
+          <div class="label">Industry Sponsor</div>
+          <div class="val">Mudhen Games</div>
         </div>
-        <div>
-          <div class="advisor-item-title">Course Instructor / Advisor</div>
-          <div class="advisor-item-value">Prof. N. Murphy</div>
+        <div class="stakeholder-item">
+          <div class="label">Course Instructor / Advisor</div>
+          <div class="val">Prof. N. Murphy</div>
         </div>
-        <div>
-          <div class="advisor-item-title">Academic Department</div>
-          <div class="advisor-item-value">KSU CCSE Software Engineering</div>
+        <div class="stakeholder-item">
+          <div class="label">Academic Institution</div>
+          <div class="val">Kennesaw State University (CCSE)</div>
         </div>
       </div>
     </div>
@@ -185,36 +814,36 @@
   <!-- Problem & Solution Overview -->
   <section id="about" class="section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Project Background</span>
-        <h3 class="section-title">The Challenge & The Solution</h3>
-        <p class="section-desc">Bridging the gap between creative game production and technical release management.</p>
+      <div class="section-head">
+        <span class="tag-label">The Challenge</span>
+        <h2 class="section-heading">Bridging Studio Operations</h2>
+        <p class="section-sub">Eliminating browser tab clutter and manual spreadsheets across multi-title game production.</p>
       </div>
 
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon-wrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <div class="feat-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="12" y1="8" x2="12" y2="12"></line>
               <line x1="12" y1="16" x2="12.01" y2="16"></line>
             </svg>
           </div>
-          <h4 class="feature-title">The Problem</h4>
-          <p class="feature-desc">
+          <h3 class="feat-title">The Problem</h3>
+          <p class="feat-desc">
             Independent game studios face fragmented operations. Production schedules live in Trello, financial & sales telemetry lives behind Steamworks portals, and community patch alerts are manually published to Discord. Release managers waste hours copy-pasting milestone data with no unified source of truth.
           </p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon-wrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <div class="feat-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
               <polyline points="22 4 12 14.01 9 11.01"></polyline>
             </svg>
           </div>
-          <h4 class="feature-title">The Solution</h4>
-          <p class="feature-desc">
+          <h3 class="feat-title">The Solution</h3>
+          <p class="feat-desc">
             The Mudhen Release Manager bridges these silos into a high-performance web dashboard. It automates milestone countdown tracking, synchronizes real Steam partner data, provides one-click rich Discord webhook announcements with persistent audit history, and delivers live multi-user collaboration over WebSockets.
           </p>
         </div>
@@ -223,96 +852,96 @@
   </section>
 
   <!-- Key Features Grid -->
-  <section id="features" class="section section-alt">
+  <section id="features" class="section section-darker">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Core Capabilities</span>
-        <h3 class="section-title">Engineered for Studio Workflows</h3>
-        <p class="section-desc">Key features built and demonstrated for Mudhen Games Milestone 3.</p>
+      <div class="section-head">
+        <span class="tag-label">Engineered Capabilities</span>
+        <h2 class="section-heading">Core System Features</h2>
+        <p class="section-sub">Comprehensive tools built to streamline independent game delivery pipelines.</p>
       </div>
 
       <div class="features-grid">
         <!-- Feature 1 -->
         <div class="feature-card">
-          <div class="feature-icon-wrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <div class="feat-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
               <line x1="9" y1="3" x2="9" y2="21"></line>
             </svg>
           </div>
-          <h4 class="feature-title">Live Multi-User Kanban</h4>
-          <p class="feature-desc">
+          <h3 class="feat-title">Live Multi-User Kanban</h3>
+          <p class="feat-desc">
             Dynamic, customizable production stages with drag-and-drop task organization. Instant state propagation across all connected studio members powered by ASP.NET Core SignalR.
           </p>
         </div>
 
         <!-- Feature 2 -->
         <div class="feature-card">
-          <div class="feature-icon-wrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <div class="feat-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
               <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
             </svg>
           </div>
-          <h4 class="feature-title">Discord Webhook Broadcasts</h4>
-          <p class="feature-desc">
+          <h3 class="feat-title">Discord Webhook Broadcasts</h3>
+          <p class="feat-desc">
             One-click milestone patch notes and playtest announcements dispatched directly to community and developer channels with rich embed formatting and persistent audit trails.
           </p>
         </div>
 
         <!-- Feature 3 -->
         <div class="feature-card">
-          <div class="feature-icon-wrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <div class="feat-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="18" y1="20" x2="18" y2="10"></line>
               <line x1="12" y1="20" x2="12" y2="4"></line>
               <line x1="6" y1="20" x2="6" y2="14"></line>
             </svg>
           </div>
-          <h4 class="feature-title">Steamworks Analytics</h4>
-          <p class="feature-desc">
+          <h3 class="feat-title">Steamworks Analytics</h3>
+          <p class="feat-desc">
             Integrated telemetry pulling live daily active users (DAU), total unit sales, refund rate analytics, and revenue metrics directly from official Steamworks partner endpoints.
           </p>
         </div>
 
         <!-- Feature 4 -->
         <div class="feature-card">
-          <div class="feature-icon-wrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <div class="feat-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
               <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
             </svg>
           </div>
-          <h4 class="feature-title">Trello Board Synchronization</h4>
-          <p class="feature-desc">
+          <h3 class="feat-title">Trello Board Synchronization</h3>
+          <p class="feat-desc">
             Seamlessly import and adopt Trello board lists into project Kanban stages with authenticated attachment caching, proxying, and checklist item resolution.
           </p>
         </div>
 
         <!-- Feature 5 -->
         <div class="feature-card">
-          <div class="feature-icon-wrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <div class="feat-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
               <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
             </svg>
           </div>
-          <h4 class="feature-title">Role-Based Access Control</h4>
-          <p class="feature-desc">
+          <h3 class="feat-title">Role-Based Access Control</h3>
+          <p class="feat-desc">
             Granular permission gating for Administrators, Editors, and Viewers. Hardened with PBKDF2 password hashing, secure JWT cookies, and IP-level brute-force rate limiting.
           </p>
         </div>
 
         <!-- Feature 6 -->
         <div class="feature-card">
-          <div class="feature-icon-wrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <div class="feat-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="12" cy="12" r="10"></circle>
               <polyline points="12 6 12 12 16 14"></polyline>
             </svg>
           </div>
-          <h4 class="feature-title">Milestone Countdowns</h4>
-          <p class="feature-desc">
+          <h3 class="feat-title">Milestone Countdowns</h3>
+          <p class="feat-desc">
             Target release countdown clocks with automatic overdue detection, build version stamping (SemVer), and project health indicators to keep teams aligned on deliverable dates.
           </p>
         </div>
@@ -323,42 +952,42 @@
   <!-- Technology Architecture -->
   <section id="architecture" class="section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">System Design</span>
-        <h3 class="section-title">Modern Technical Architecture</h3>
-        <p class="section-desc">Engineered for clean separation of concerns, high throughput, and reliable real-time updates.</p>
+      <div class="section-head">
+        <span class="tag-label">System Architecture</span>
+        <h2 class="section-heading">High-Performance Tech Stack</h2>
+        <p class="section-sub">Engineered with modern .NET 10 microservices, React 19, and Docker container orchestration.</p>
       </div>
 
       <div class="tech-grid">
-        <div class="tech-column">
-          <h4 class="tech-cat-title">Frontend Stack</h4>
-          <ul class="tech-list">
-            <li class="tech-item"><span class="tech-badge">React 19</span> Modern component model & hooks</li>
-            <li class="tech-item"><span class="tech-badge">TypeScript</span> End-to-end type safety</li>
-            <li class="tech-item"><span class="tech-badge">Tailwind v4</span> Custom design tokens & responsiveness</li>
-            <li class="tech-item"><span class="tech-badge">Vite</span> Ultra-fast production bundling (300ms)</li>
-            <li class="tech-item"><span class="tech-badge">SignalR Client</span> WebSocket state synchronization</li>
+        <div class="tech-box">
+          <div class="tech-title">Frontend Stack</div>
+          <ul class="tech-items">
+            <li class="tech-row"><span class="pill">React 19</span> Modern component architecture</li>
+            <li class="tech-row"><span class="pill">TypeScript</span> End-to-end type safety</li>
+            <li class="tech-row"><span class="pill">Tailwind CSS</span> Design tokens & layout</li>
+            <li class="tech-row"><span class="pill">Vite</span> Fast production bundling (300ms)</li>
+            <li class="tech-row"><span class="pill">SignalR</span> WebSocket event bus</li>
           </ul>
         </div>
 
-        <div class="tech-column">
-          <h4 class="tech-cat-title">Backend Architecture</h4>
-          <ul class="tech-list">
-            <li class="tech-item"><span class="tech-badge">ASP.NET Core</span> High-throughput .NET 10 Web API</li>
-            <li class="tech-item"><span class="tech-badge">EF Core</span> Entity Framework Core ORM</li>
-            <li class="tech-item"><span class="tech-badge">SQLite WAL</span> High-concurrency Write-Ahead Logging</li>
-            <li class="tech-item"><span class="tech-badge">SignalR Hub</span> Real-time push notification bus</li>
-            <li class="tech-item"><span class="tech-badge">PBKDF2</span> Salted cryptographically secure hashing</li>
+        <div class="tech-box">
+          <div class="tech-title">Backend Stack</div>
+          <ul class="tech-items">
+            <li class="tech-row"><span class="pill">.NET 10</span> ASP.NET Core Web API</li>
+            <li class="tech-row"><span class="pill">EF Core</span> Entity Framework Core ORM</li>
+            <li class="tech-row"><span class="pill">SQLite WAL</span> High-concurrency Write-Ahead Log</li>
+            <li class="tech-row"><span class="pill">SignalR Hub</span> Real-time broadcast engine</li>
+            <li class="tech-row"><span class="pill">PBKDF2</span> Salted cryptographic hashing</li>
           </ul>
         </div>
 
-        <div class="tech-column">
-          <h4 class="tech-cat-title">Testing & DevOps</h4>
-          <ul class="tech-list">
-            <li class="tech-item"><span class="tech-badge">xUnit</span> 230+ comprehensive integration tests</li>
-            <li class="tech-item"><span class="tech-badge">WebFactory</span> In-memory test host & mock servers</li>
-            <li class="tech-item"><span class="tech-badge">Docker</span> Multi-container compose orchestrator</li>
-            <li class="tech-item"><span class="tech-badge">NGINX</span> Reverse proxy & asset compression</li>
+        <div class="tech-box">
+          <div class="tech-title">Testing & DevOps</div>
+          <ul class="tech-items">
+            <li class="tech-row"><span class="pill">xUnit</span> 230+ integration test cases</li>
+            <li class="tech-row"><span class="pill">WebFactory</span> In-memory test web server</li>
+            <li class="tech-row"><span class="pill">Docker</span> Multi-container composition</li>
+            <li class="tech-row"><span class="pill">NGINX</span> Reverse proxy & SSL termination</li>
           </ul>
         </div>
       </div>
@@ -367,14 +996,14 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-left">
-        <p><strong>Mudhen Release Manager</strong> · Capstone Project Showcase</p>
-        <p>Kennesaw State University · College of Computing and Software Engineering (CCSE)</p>
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">Mudhen Release Manager · Capstone Showcase</div>
+        <div>Kennesaw State University · College of Computing and Software Engineering (CCSE)</div>
       </div>
       <div>
-        <a href="https://www.linkedin.com/in/tanner-giddens-1ab155346/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">
-          LinkedIn Profile ↗
+        <a href="https://www.linkedin.com/in/tanner-giddens-1ab155346/" target="_blank" rel="noopener noreferrer" class="btn-linkedin-nav">
+          Connect on LinkedIn ↗
         </a>
       </div>
     </div>
