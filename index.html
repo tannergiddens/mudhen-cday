@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mudhen Release Manager | C-Day Fall 2026 Showcase</title>
+  <meta name="description" content="Kennesaw State University CCSE Capstone Showcase: Mudhen Release Manager - Game Studio Release Orchestration Platform by Tanner Giddens.">
+  <meta property="og:title" content="Mudhen Release Manager · C-Day Fall 2026">
+  <meta property="og:description" content="Senior Capstone Showcase project by Tanner Giddens in partnership with Mudhen Games.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main Navigation">
+    <div class="container nav-container">
+      <div class="nav-brand">
+        <img src="assets/logo.png" alt="Mudhen Games Logo" class="nav-logo">
+        <div class="brand-text">
+          <h1>Mudhen Games</h1>
+          <span>Release Manager · C-Day 2026</span>
+        </div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#developer" class="nav-link">Developer</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#architecture" class="nav-link">Tech Stack</a></li>
+      </ul>
+      <a href="https://www.linkedin.com/in/tanner-giddens-1ab155346/" target="_blank" rel="noopener noreferrer" class="nav-cta" aria-label="Connect on LinkedIn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+        <span>Connect on LinkedIn</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        KSU CCSE Computing Showcase · Fall 2026
+      </div>
+      <h2 class="hero-title">
+        Mudhen <span class="highlight">Release Manager</span>
+      </h2>
+      <p class="hero-lead">
+        A centralized, real-time release orchestration and milestone synchronization platform developed for independent game development studios. Unifies Steam partner analytics, Discord patch broadcasts, Trello task synchronization, and collaborative Kanban workflows into a single production command center.
+      </p>
+      <div class="hero-actions">
+        <a href="https://www.linkedin.com/in/tanner-giddens-1ab155346/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+          Connect with Tanner on LinkedIn
+        </a>
+        <a href="#developer" class="btn btn-secondary">
+          View Developer Profile
+        </a>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">230+</div>
+          <div class="stat-label">Automated Integration Tests</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">&lt; 50ms</div>
+          <div class="stat-label">Real-Time SignalR Broadcasts</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">4 Hubs</div>
+          <div class="stat-label">Steam, Discord, Trello, Auth</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Sponsor Satisfaction (M3 Demo)</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Developer Profile Spotlight -->
+  <section id="developer" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">C-Day Presenter & Developer</span>
+        <h3 class="section-title">Meet the Developer</h3>
+        <p class="section-desc">Designed, implemented, and verified by Tanner Giddens for the CCSE Senior Capstone Showcase.</p>
+      </div>
+
+      <div class="profile-card">
+        <div class="profile-media">
+          <div class="profile-avatar-wrap">
+            <!-- Uses tanner.jpg if present, otherwise clean SVG avatar -->
+            <img src="assets/tanner.jpg" onerror="this.onerror=null; this.src='assets/tanner-placeholder.svg';" alt="Tanner Giddens" class="profile-avatar">
+          </div>
+          <h4 class="profile-media-name">Tanner Giddens</h4>
+          <span class="profile-media-title">Lead Full-Stack Developer</span>
+        </div>
+
+        <div class="profile-content">
+          <span class="profile-badge">Senior Capstone Presenter · Fall 2026</span>
+          <h4 class="profile-heading">Software Engineering BSSWE</h4>
+          <p class="profile-bio">
+            Senior Software Engineering student at <strong>Kennesaw State University</strong> (College of Computing and Software Engineering). Passionate about full-stack system architecture, distributed real-time synchronization, enterprise security (PBKDF2/RBAC), and developer tooling that automates game studio delivery pipelines.
+          </p>
+
+          <div class="profile-details">
+            <div class="detail-item">
+              <span class="detail-label">Institution</span>
+              <span class="detail-value">Kennesaw State University</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Major</span>
+              <span class="detail-value">B.S. Software Engineering (BSSWE)</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Industry Sponsor</span>
+              <span class="detail-value">Mudhen Games</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Key Specialties</span>
+              <span class="detail-value">.NET 10, React 19, TypeScript, SignalR</span>
+            </div>
+          </div>
+
+          <div class="profile-actions">
+            <a href="https://www.linkedin.com/in/tanner-giddens-1ab155346/" target="_blank" rel="noopener noreferrer" class="btn-linkedin-big">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              View Tanner's LinkedIn Profile
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem & Solution Overview -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Project Background</span>
+        <h3 class="section-title">The Challenge & The Solution</h3>
+        <p class="section-desc">Bridging the gap between creative game production and technical release management.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </div>
+          <h4 class="feature-title">The Problem</h4>
+          <p class="feature-desc">
+            Independent game studios face fragmented operations. Production schedules live in Trello, financial & sales telemetry lives behind Steamworks portals, and community patch alerts are manually published to Discord. Release managers waste hours copy-pasting milestone data with no unified source of truth.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <h4 class="feature-title">The Solution</h4>
+          <p class="feature-desc">
+            The Mudhen Release Manager bridges these silos into a high-performance web dashboard. It automates milestone countdown tracking, synchronizes real Steam partner data, provides one-click rich Discord webhook announcements with persistent audit history, and delivers live multi-user collaboration over WebSockets.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features Grid -->
+  <section id="features" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Core Capabilities</span>
+        <h3 class="section-title">Engineered for Studio Workflows</h3>
+        <p class="section-desc">Key features built and demonstrated for Mudhen Games Milestone 3.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="9" y1="3" x2="9" y2="21"></line>
+            </svg>
+          </div>
+          <h4 class="feature-title">Live Multi-User Kanban</h4>
+          <p class="feature-desc">
+            Dynamic, customizable production stages with drag-and-drop task organization. Instant state propagation across all connected studio members powered by ASP.NET Core SignalR.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+          </div>
+          <h4 class="feature-title">Discord Webhook Broadcasts</h4>
+          <p class="feature-desc">
+            One-click milestone patch notes and playtest announcements dispatched directly to community and developer channels with rich embed formatting and persistent audit trails.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          <h4 class="feature-title">Steamworks Analytics</h4>
+          <p class="feature-desc">
+            Integrated telemetry pulling live daily active users (DAU), total unit sales, refund rate analytics, and revenue metrics directly from official Steamworks partner endpoints.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+              <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+            </svg>
+          </div>
+          <h4 class="feature-title">Trello Board Synchronization</h4>
+          <p class="feature-desc">
+            Seamlessly import and adopt Trello board lists into project Kanban stages with authenticated attachment caching, proxying, and checklist item resolution.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <h4 class="feature-title">Role-Based Access Control</h4>
+          <p class="feature-desc">
+            Granular permission gating for Administrators, Editors, and Viewers. Hardened with PBKDF2 password hashing, secure JWT cookies, and IP-level brute-force rate limiting.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <div class="feature-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h4 class="feature-title">Milestone Countdowns</h4>
+          <p class="feature-desc">
+            Target release countdown clocks with automatic overdue detection, build version stamping (SemVer), and project health indicators to keep teams aligned on deliverable dates.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Architecture -->
+  <section id="architecture" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">System Design</span>
+        <h3 class="section-title">Modern Technical Architecture</h3>
+        <p class="section-desc">Engineered for clean separation of concerns, high throughput, and reliable real-time updates.</p>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-column">
+          <h4 class="tech-cat-title">Frontend Stack</h4>
+          <ul class="tech-list">
+            <li class="tech-item"><span class="tech-badge">React 19</span> Modern component model & hooks</li>
+            <li class="tech-item"><span class="tech-badge">TypeScript</span> End-to-end type safety</li>
+            <li class="tech-item"><span class="tech-badge">Tailwind v4</span> Custom design tokens & responsiveness</li>
+            <li class="tech-item"><span class="tech-badge">Vite</span> Ultra-fast production bundling (300ms)</li>
+            <li class="tech-item"><span class="tech-badge">SignalR Client</span> WebSocket state synchronization</li>
+          </ul>
+        </div>
+
+        <div class="tech-column">
+          <h4 class="tech-cat-title">Backend Architecture</h4>
+          <ul class="tech-list">
+            <li class="tech-item"><span class="tech-badge">ASP.NET Core</span> High-throughput .NET 10 Web API</li>
+            <li class="tech-item"><span class="tech-badge">EF Core</span> Entity Framework Core ORM</li>
+            <li class="tech-item"><span class="tech-badge">SQLite WAL</span> High-concurrency Write-Ahead Logging</li>
+            <li class="tech-item"><span class="tech-badge">SignalR Hub</span> Real-time push notification bus</li>
+            <li class="tech-item"><span class="tech-badge">PBKDF2</span> Salted cryptographically secure hashing</li>
+          </ul>
+        </div>
+
+        <div class="tech-column">
+          <h4 class="tech-cat-title">Testing & DevOps</h4>
+          <ul class="tech-list">
+            <li class="tech-item"><span class="tech-badge">xUnit</span> 230+ comprehensive integration tests</li>
+            <li class="tech-item"><span class="tech-badge">WebFactory</span> In-memory test host & mock servers</li>
+            <li class="tech-item"><span class="tech-badge">Docker</span> Multi-container compose orchestrator</li>
+            <li class="tech-item"><span class="tech-badge">NGINX</span> Reverse proxy & asset compression</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <p><strong>Mudhen Release Manager</strong> · Capstone Project Showcase</p>
+        <p>Kennesaw State University · College of Computing and Software Engineering (CCSE)</p>
+      </div>
+      <div>
+        <a href="https://www.linkedin.com/in/tanner-giddens-1ab155346/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">
+          LinkedIn Profile ↗
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
